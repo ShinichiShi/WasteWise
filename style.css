@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
 }
 
 body {
@@ -41,6 +42,10 @@ a {
     color: lime;
     font-size: medium;
 }
+input{
+    height: 2.5vh;
+    width: 26vw;
+}
 .results{
     
     display: flex;
@@ -62,16 +67,13 @@ a {
     gap: 2vh;
     
 }
-.s0{
-    margin: 0;
-}
 .hero {
     height: 70vh;
     width: 100%;
     background-color:lightgrey;
     position: relative;
     /*dont need flex to align in static way*/
-    z-index:-1;
+    /* z-index:-1; */
     margin: 0 auto;
     padding-top: 0px; /*to adjust with navbar*/ 
     margin-bottom: 10vh ;
@@ -90,7 +92,7 @@ a {
     transform: translateY(-50%);
     border-radius: 8px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-    z-index: 2;
+    /* z-index: 2; */
     
     display: flex;
     flex-direction: column;
@@ -131,7 +133,7 @@ a {
     font-size:1.5em;
 }
 
-.banner-text {
+/* .banner-text {
     display:-webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -140,19 +142,25 @@ a {
     max-height: 15em; 
     transition: max-height 0.5s ease, -webkit-line-clamp 0.5s ease;
     font-size: medium;
-}
+} */
 
 .view-btn {
-    display: block;
+    /* display: block; */
     margin: 10px auto 0;
     padding: 10px 20px;
-    background-color: transparent;
+    /* background-color: transparent; */
     color: blue;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    position: relative; /* Ensure it is properly positioned */
-    z-index: 3; /* Ensure it is above the banner content */
+    /* cursor: pointer; */
+    /* position: relative; Ensure it is properly positioned */
+    /* z-index: 3; Ensure it is above the banner content */
+}
+.viewbtn{
+    width:100px ;
+    padding: 10px;
+    /* margin: 10px; */
+    box-sizing: border-box;
 }
 .details{
     padding:0 200px;
