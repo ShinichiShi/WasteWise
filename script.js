@@ -37,31 +37,13 @@ document.querySelector('.filter').addEventListener('click', () => {
 }
 )
 
-
-// const trialButton = document.querySelector('.trial')
-// const detailsDialog = document.querySelector('.detailsDialog');
-// const closeDialogButton = document.getElementById('closeDialog');
-
-// trialButton.addEventListener('click', () => {
-//   detailsDialog.show();
-//   document.addEventListener('click', outsideClickListener);
-// });
-// function closeDialog() {
-//   detailsDialog.close();
-//   document.removeEventListener('click', outsideClickListener);
-// }
-// function outsideClickListener(event) {
-//   if (!detailsDialog.contains(event.target) && event.target !== trialButton) {
-//     closeDialog();
-//   }
-// }
-// closeDialogButton.addEventListener('click', closeDialog);
-
-// ###############################################################################################3333
+const details = document.querySelector('.details')
+const hero = document.querySelector('.hero')
+const resultSection = document.querySelector('.resultSection')
+let detailsVisible = false
 
 function findServices() {
   console.log(wasteType)
-
   const result = document.querySelector('.results')
   if (!wasteType) {
     alert('Kindly select a waste type');
@@ -69,6 +51,16 @@ function findServices() {
   }
 
   if (navigator.geolocation) {
+    //result banner 
+    const banner = document.createElement('div')
+    banner.className = "resultBanner"
+    banner.innerHTML = `
+<div>Top Results Nearest To Your Area!!</div>`
+
+    resultSection.prepend(banner)
+
+    result.style.height = "70vh"
+    result.style.width = "40vw"
     result.innerHTML = ''
     navigator.geolocation.getCurrentPosition(position => {
       const userLat = position.coords.latitude;
@@ -83,6 +75,7 @@ function findServices() {
       });
 
 
+      // result.appendChild(banner)
       nearbyOrganizations.forEach(org => {
         const distance = calculateDistance(userLat, userLng, org.lat, org.lng);
 
@@ -99,47 +92,61 @@ function findServices() {
         btn.innerHTML = "Enquire Now"
         enquire.appendChild(btn)
 
-        // Create dialog elements
-        const dialog = document.createElement('dialog');
-        const details = document.createElement('div');
-        details.className = "detailsDialog";
-        dialog.appendChild(details);
-
         // Function to show dialog details
         const showDetails = () => {
           details.innerHTML = `
-          <p>Contact: ${org.contact}</p>
-          <p>Address: ${org.address}</p>
-          <p>Distance: ${distance.toFixed(2)} km</p>
-          `;
-          details.classList.add('active');
-
-          dialog.showModal();
+           <p>Contact: ${org.contact}</p>
+           <p>Address: ${org.address}</p>
+           <p>Distance: ${distance.toFixed(2)} km</p>
+           `;
+          hero.style.opacity = "0.7"
+          details.style.display = "block";
         };
 
-        // Function to hide dialog
-        const hideDialog = () => {
-          dialog.close();
+        const hideDetails = () => {
+          details.style.display = "none";
+          hero.style.opacity = "1";
         };
 
-        // Event listener to show details when clicking on organization section
-        div.addEventListener('click', () => {
-          showDetails();
+        div.addEventListener('click', (event) => {
+          if (detailsVisible) {
+            hideDetails();
+          } else {
+            showDetails();
+          }
+          detailsVisible = !detailsVisible;
+          event.stopPropagation(); // Prevents the click from propagating to the document
         });
 
-        // Event listener to show details when clicking "Enquire Now" button
-        btn.addEventListener('click', (event) => {
-          event.stopPropagation(); // Prevent event from bubbling to div's click event
-          showDetails();
+        document.addEventListener('click', (event) => {
+          if (detailsVisible && !details.contains(event.target) && event.target !== div) {
+            hideDetails();
+            detailsVisible = false;
+          }
         });
 
 
-        div.appendChild(dist)
-        div.appendChild(enquire)
-        div.appendChild(dialog)
-        result.appendChild(div)
+        // div.addEventListener('click', () => {
+        //   showDetails();
+        //   document.addEventListener('click', outsideClickListener);
+        // });
 
-        console.log("success")
+        // function outsideClickListener(event) {
+        //   if (!details.contains(event.target) && event.target !== div) {
+        //     details.style.display = "none";
+        //     hero.style.opacity = "1"
+        //   }
+        // }
+
+        // enquire.addEventListener('click', (event) => {
+        //   event.stopPropagation();
+        //   showDetails();
+        // });
+
+
+        div.appendChild(dist);
+        div.appendChild(enquire);
+        result.appendChild(div);
 
       });
 
@@ -150,8 +157,6 @@ function findServices() {
     alert("Geolocation is not supported by this browser");
   }
 }
-
-
 // ###############################################################################################3333
 
 
