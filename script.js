@@ -15,36 +15,45 @@ const organizations = [
   { name: "HN Scrap Buyer", type: "scrap", lat: 12.904940, lng: 77.635685 },
   { name: "Scraplan - Best Scrap Buyers", type: "scrap", lat: 12.897489258475378, lng: 77.55926839919253 },
   { name: "AIM TRADING COMPANY", type: "scrap", lat: 12.906688201660838, lng: 77.57129994491343 },
-  { name: "Scrapzone - Your Door Step Scrap Pickup Service", type: "scrap", lat: 12.91866794871167, lng: 77.5900663943839 }
+  { name: "Scrapzone-Your Pickup Service", type: "scrap", lat: 12.91866794871167, lng: 77.5900663943839 }
 ];
 
-// ###############################################################################################3333
+// ###############################################################################################
 let wasteType;
 document.querySelector('.wasteTypeFood').addEventListener('click', () => {
   wasteType = "food"
-}
+  document.querySelector('.wasteTypeScrap').style.backgroundColor="#65CCB8";
+  document.querySelector('.wasteTypeElectronic').style.backgroundColor="#65CCB8";
+  document.querySelector('.wasteTypeFood').style.backgroundColor="white";}
 )
 document.querySelector('.wasteTypeElectronic').addEventListener('click', () => {
   wasteType = "electronic"
-}
+  document.querySelector('.wasteTypeScrap').style.backgroundColor="#65CCB8";
+  document.querySelector('.wasteTypeElectronic').style.backgroundColor="white";
+  document.querySelector('.wasteTypeFood').style.backgroundColor="#65CCB8";}
 )
 document.querySelector('.wasteTypeScrap').addEventListener('click', () => {
   wasteType = "scrap"
+  document.querySelector('.wasteTypeScrap').style.backgroundColor="white";
+  document.querySelector('.wasteTypeElectronic').style.backgroundColor="#65CCB8";
+  document.querySelector('.wasteTypeFood').style.backgroundColor="#65CCB8";
 }
 )
+
 document.querySelector('.filter').addEventListener('click', () => {
   findServices()
 }
 )
+// ###############################################################################################
 
 const details = document.querySelector('.details')
 const hero = document.querySelector('.hero')
 const resultSection = document.querySelector('.resultSection')
 const loader = document.querySelector('.loading')
-const preload=document.querySelector('.pre-load')
+const preload = document.querySelector('.pre-load')
 
 let detailsVisible = false
-let heroFlag=true
+let heroFlag = true
 
 function findServices() {
   console.log(wasteType)
@@ -60,20 +69,20 @@ function findServices() {
     banner.className = "resultBanner"
     banner.innerHTML = `
     <div>Top Results Nearest To Your Area!!</div>`
-    if(heroFlag){
+    if (heroFlag) {
       resultSection.prepend(banner)
-      heroFlag=false
+      heroFlag = false
     }
 
     //pre-adjustment
     result.style.height = "70vh"
     result.style.width = "40vw"
-    preload.style.height="70vh"
-    preload.style.width="40vw"
-    
-    preload.style.display="block"
-    result.style.display="none"
-    loader.style.display="block"
+    preload.style.height = "70vh"
+    preload.style.width = "40vw"
+
+    preload.style.display = "block"
+    result.style.display = "none"
+    loader.style.display = "block"
     result.innerHTML = ''
 
     navigator.geolocation.getCurrentPosition(position => {
@@ -101,8 +110,8 @@ function findServices() {
 
         //enquire btn
         const enquire = document.createElement('div')
-        enquire.className = "enquire"
         const btn = document.createElement('button')
+        btn.className = "enquire"
         btn.innerHTML = "Enquire Now"
         enquire.appendChild(btn)
 
@@ -145,11 +154,11 @@ function findServices() {
         result.appendChild(div);
       });
 
-    preload.style.display="none"
-    result.style.display="block"
-    loader.style.display="none"
+      preload.style.display = "none"
+      result.style.display = "block"
+      loader.style.display = "none"
 
-      
+
     }, () => {
       alert("Kindly Enable Geolocation and try again");
     });
@@ -174,4 +183,58 @@ function calculateDistance(lat1, lng1, lat2, lng2) {
 function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
-// ###############################################################################################3333
+// ####################################### fields INPUT ########################################################
+
+document.addEventListener('DOMContentLoaded',  function () {
+  const fields = document.querySelectorAll('.fields');
+
+  fields.forEach(function (fields) {
+
+    const input = fields.querySelector('.semInput');
+    const dropdown = fields.querySelector('.typeService');
+    const placeholder = fields.querySelector('.types');
+
+    fields.addEventListener('click', function () {
+      dropdown.style.display = 'block';
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!fields.contains(event.target)) {
+        dropdown.style.display = 'none';
+        event.stopPropagation()
+      }
+    });
+
+    const listItems = dropdown.querySelectorAll('li');
+    listItems.forEach(function (item) {
+      item.addEventListener('click', function (event) {
+        event.stopPropagation()
+        const value = item.getAttribute('data-value');
+        const text = item.textContent;
+
+        input.value = text;
+        dropdown.style.display = 'none';
+        placeholder.style.visibility = 'hidden';
+      });
+    });
+
+    input.addEventListener('focus', function () {
+      placeholder.style.visibility = 'hidden';
+
+    });
+
+    input.addEventListener('blur', function () {
+      if (input.value === '') {
+        placeholder.style.visibility = 'visible';
+
+      }
+    });
+
+    input.addEventListener('input', function () {
+      placeholder.style.visibility = input.value === '' ? 'visible' : 'hidden';
+
+    });
+  });
+});
+
+// ##########################################################################################

@@ -23,12 +23,13 @@
 
                 <li> <a href="#" class="href">CONTACT US</a>
                 </li>
-                <button class="signbtn">Sign Up!</button>
+                <button class="signbtn">JOIN US!</button>
             </ul>
         </div>
     </nav>
 
     <div class="hero">
+        <video src="./assets/bg.mp4" video autoplay muted loop id="myVideo"></video>
         <div class="card">
             <div class="header">
                 Connect with professional Waste Collection - Garbage Disposal service providers
@@ -38,19 +39,115 @@
                 <button class="wasteTypeElectronic">ELECTRONIC</button>
                 <button class="wasteTypeScrap">SCRAP</button>
             </div>
-            <div class="time">
-                <input type="text" name="time" id="time" placeholder="When do you want the service?">
+
+            <div class="fields inputs" tabindex="-1">
+                <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                <span tabindex="-1" class="types">When do you need the Service?</span>
+                <span tabindex="-1" class="values"></span>
+                <ul class="typeService">
+                    <li data-value="IMMEDIATELY">
+                        <span data-value="IMMEDIATELY">Immediately</span>
+                    </li>
+                    <li data-value="NEXT_3_DAYS">
+                        <span data-value="NEXT_3_DAYS">In the next 3 days</span>
+                    </li>
+                    <li data-value="NEXT_7_DAYS">
+                        <span data-value="NEXT_7_DAYS">In the next 7 days</span>
+                    </li>
+                    <li data-value="NEXT_15_DAYS">
+                        <span data-value="NEXT_15_DAYS">In the next 15 days</span>
+                    </li>
+                    <li data-value="NEXT_30_DAYS">
+                        <span data-value="NEXT_30_DAYS">Within a month</span>
+                    </li>
+                    <li data-value="AFTER_A_MONTH">
+                        <span data-value="AFTER_A_MONTH">After a month</span>
+                    </li>
+                </ul>
+                <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
             </div>
-            <div class="type">
-                <input type="text" name="type" id="type" placeholder="What type of waste do you want to dispose?">
+
+            <div class="fields inputs" tabindex="-1">
+                <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                <span tabindex="-1" class="types">What type of waste do you need help disposing?
+                </span>
+                <span tabindex="-1" class="values"></span>
+                <ul class="typeService">
+                    <li data-value="Dry-waste">
+                        <span data-value="Dry-waste">Dry Waste</span>
+                    </li>
+                    <li data-value="WetWaste">
+                        <span data-value="WetWaste">Wet Waste</span>
+                    </li>
+                    <li data-value="ElectronicWaste">
+                        <span data-value="ElectronicWaste">Electronic Waste
+                        </span>
+                    </li>
+                    <li data-value="PaperWaste">
+                        <span data-value="PaperWaste">Paper Waste
+                        </span>
+                    </li>
+                    <li data-value="Plastics">
+                        <span data-value="Plastics">Plastics</span>
+                    </li>
+                    <li data-value="ConstructionWaste">
+                        <span data-value="ConstructionWaste">Construction Waste
+                        </span>
+                    </li>
+                    <li data-value=" MedicalWaste">
+                        <span data-value=" MedicalWaste"> Medical Waste
+                        </span>
+                    </li>
+                    <li data-value="HazardousWaste">
+                        <span data-value="HazardousWaste"> Hazardous Waste
+                        </span>
+                    </li>
+                </ul>
+                <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
             </div>
-            <div class="place">
-                <input type="text" name="place" id="place" placeholder="What type of place do you need service?">
+
+            <div class="fields inputs" tabindex="-1">
+                <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                <span tabindex="-1" class="types">What type of place do you need this service at?
+                </span>
+                <span tabindex="-1" class="values"></span>
+                <ul class="typeService">
+                    <li data-value="Residential">
+                        <span data-value="Residential">Residential</span>
+                    </li>
+                    <li data-value="Commercial">
+                        <span data-value="Commercial">Commercial</span>
+                    </li>
+                    <li data-value="Industrial">
+                        <span data-value="Industrial">Industrial</span>
+                    </li>
+                </ul>
+                <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
             </div>
-            <div class="frequency">
-                <input type="text" name="frequency" id="frequency" placeholder="What is frequency of service you need?">
+
+            <div class="fields inputs" tabindex="-1">
+                <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                <span tabindex="-1" class="types">What is the frequency of service you need?
+                </span>
+                <span tabindex="-1" class="values"></span>
+                <ul class="typeService">
+                    <li data-value="Daily">
+                        <span data-value="Daily">Daily</span>
+                    </li>
+                    <li data-value="Weekly">
+                        <span data-value="Weekly">Weekly</span>
+                    </li>
+                    <li data-value="Monthly">
+                        <span data-value="Monthly">Monthly</span>
+                    </li>
+                    <li data-value="Yearly">
+                        <span data-value="Yearly">Yearly</span>
+                    </li>
+                </ul>
+                <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
             </div>
             <div class="terms">By clicking Enquire Now, you agree to the WasteWise Terms of Use</div>
+
             <div class="filter">
                 <button>Enquire Now</button>
             </div>
@@ -61,44 +158,21 @@
                     <div>Top Results Nearest To Your Area!!</div>
                 </div>
                 <div class="loading" style="display: none;">
-                    <div class="loader" >
-                        <div class="loaderMiniContainer">
-                            <div class="barContainer">
-                                <span class="bar"></span>
-                                <span class="bar bar2"></span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 101 114" class="svgIcon">
-                                <circle stroke-width="7" stroke="black" transform="rotate(36.0692 46.1726 46.1727)"
-                                    r="29.5497" cy="46.1727" cx="46.1726"></circle>
-                                <line stroke-width="7" stroke="black" y2="111.784" x2="97.7088" y1="67.7837"
-                                    x1="61.7089"></line>
-                            </svg>
-                        </div>
+                    <div class="loader">
+                        <label>Please wait...</label>
+                        <div class="load"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="results"></div>
+            <div class="results" style="display: none;"></div>
         </div>
     </div>
     <div class="details">
-        wq
+        <div class="img">
+            
+        </div>
     </div>
-    <div class="quikrSelect inputs " tabindex="-1">
-        <input type="text" class="semInput" name="query" autocomplete="off" value="">
-        <span tabindex="-1" class="types">When do you need the Service?</span>
-        <span tabindex="-1" class="values"></span>
-        <ul class="typeService">
-            <li class="" data-value="IMMEDIATELY"><span data-value="IMMEDIATELY">Immediately</span></li>
-            <li class="" data-value="NEXT_3_DAYS"><span data-value="NEXT_3_DAYS">In the next 3 days</span></li>
-            <li class="" data-value="NEXT_7_DAYS"><span data-value="NEXT_7_DAYS">In the next 7 days</span></li>
-            <li class="" data-value="NEXT_15_DAYS"><span data-value="NEXT_15_DAYS">In the next 15 days</span></li>
-            <li class="" data-value="NEXT_30_DAYS"><span data-value="NEXT_30_DAYS">Within a month</span></li>
-            <li class="" data-value="AFTER_A_MONTH"><span data-value="AFTER_A_MONTH">After a month</span></li>
-        </ul>
-        <i tabindex="-1" class="glyphicon glyphicon-menu-down"></i>
-    </div>  
-
     <footer>
         <div class="contact">
             <span> Questions? Call

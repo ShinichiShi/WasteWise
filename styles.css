@@ -15,12 +15,24 @@
     padding: 0;
     scrollbar-width: none;
     font-family: "Assistant", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#myVideo {
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.7;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .navbar {
-    background-color: black;
+    background-color: var(--black);
     color: var(--light-green);
     height: 10vh;
     width: 100%;
@@ -67,51 +79,62 @@ a {
     color: var(--bg-color);
     font-size: medium;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
     gap: 2vh;
     text-wrap: wrap;
-    overflow:hidden;
+    overflow: hidden;
     font-family: 'Berkshire Swash', sans-serif;
     font-weight: 100;
 }
-.signbtn{
+
+.signbtn {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
+
 input {
+    position: relative;
     height: 5.5vh;
     width: 26vw;
     background-color: transparent;
-    border:none;
+    border: none;
     border-radius: 1.5vh;
+    color:var(--black);
+
     border-bottom: 0.2vh solid var(--light-green);
 }
-input::placeholder{
-    text-align: center;
-    font-size: 1rem;
-    color:rgb(53, 94, 74);
-}
-input:hover{
-    background-color: var(--green);
+
+input:hover {
+    background-color: var(--white);
+    color:var(--black);
     font-size: large;
 }
 
-button{
+button {
     background-color: var(--light-green);
     height: 6vh;
-    width:15vh;    
+    width: 15vh;
+    position: relative;
     border-radius: 2vh;
     font-size: 1rem;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
-button:hover{
-    background-color: var(--green);
 
+button:hover {
+    background-color: var(--white);
+    cursor: pointer;
 }
+
+.enquire:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+
 .hero {
     height: 100vh;
     width: 100%;
@@ -122,7 +145,7 @@ button:hover{
     align-items: center;
     justify-content: center;
     gap: 3vh;
-
+    position: relative;
 }
 
 .card {
@@ -134,24 +157,29 @@ button:hover{
     color: var(--light-green);
     border-radius: 3vh;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3vh;
-    /* transition: opacity 0.5s ease-in-out; */
-    /* animation: fadeIn 1.2s forwards; */
+    transition: opacity 0.5s ease-in-out;
+    animation: fadeIn 1.2s forwards;
 
 }
 
 .resultSection {
     display: flex;
+    background-color: var(--light-green);
+    border-radius: 3vh;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     overflow: scroll;
+    position: relative;
 }
-.pre-load{
+
+.pre-load {
     /* height: 70vh;
     width: 40vw; */
     display: flex;
@@ -159,7 +187,9 @@ button:hover{
     justify-content: space-between;
     align-items: center;
     overflow: scroll;
+    position: relative;
 }
+
 .resultBanner {
     height: 10vh;
     width: 40vw;
@@ -168,28 +198,34 @@ button:hover{
     align-items: center;
     justify-content: center;
     animation: fadeIn 0.5s forwards;
-
+    position: relative;
 }
-.loading{
+
+.loading {
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
-.loader{
-    margin: 30vh;
+
+.loader {
+    margin: 20vh;
+    position: relative;
 }
+
 .results {
     /* height: 70vh;
     width: 40vw; */
-    margin: 0;
-    padding: 0;
+    margin: 2vh;
+    padding: 2vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 3vh;
     overflow: scroll;
+    position: relative;
 
 }
 
@@ -206,7 +242,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
     transition: opacity 0.5s ease-in-out;
 
 }
@@ -224,11 +260,13 @@ button:hover{
         opacity: 0;
         transform: translateY(100vh);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .details {
     height: 100vh;
     width: 30vw;
@@ -242,22 +280,83 @@ button:hover{
     border-radius: 5vh;
 }
 
+.fields {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.fields .semInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    color:var(--light-green)
+}
+
+.fields .types {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--green);
+    transition: color 0.3s ease;
+}
+
+
+.fields .typeService {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: var(--light-green);
+    color: var(--black);
+    border: 1px solid #ccc;
+    border-radius: 3vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.fields .typeService li {
+    padding: 10px;
+    border-radius: 3vh;
+    cursor: pointer;
+}
+
+.fields .typeService li:hover {
+    background: #f0f0f0;
+
+}
+
+.fields .glyphicon-menu-down {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 footer {
     background-color: var(--black);
     color: var(--white);
     margin: 0;
     padding: 2vh;
+    position: relative;
 }
 
 .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     color: white;
+    position: relative;
 }
 
 footer span {
     padding: 34px 24px;
     margin-left: 50px;
+    position: relative;
 }
 
 .footer-item {
@@ -265,86 +364,76 @@ footer span {
     flex-direction: column;
     gap: 23px;
     align-items: center;
+    position: relative;
 }
 
 .footer a {
     font-size: 14px;
     color: white;
+    position: relative;
 }
 
 footer .contact {
     padding: 34px 24px;
+    position: relative;
 }
 
+
 .loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 350px;
+  height: 180px;
+  border-radius: 10px;
+  background: var(--light-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px;
+  /* box-shadow: 2px 2px 10px -5px lightgrey; */
+}
+.load {
+  width: 100%;
+  height: 10px;
+  background: var(--light-green);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.load::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 10px;
+  background: #002;
+  border-radius: 10px;
+  z-index: 1;
+  animation: load 0.6s alternate infinite;
+}
+label {
+  color: #002;
+  font-size: 18px;
+  animation: bit 0.6s alternate infinite;
+}
+
+@keyframes bit {
+  from {
+    opacity: 0.3;
   }
-  .loaderMiniContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 130px;
-    height: fit-content;
+  to {
+    opacity: 1;
   }
-  .barContainer {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-    background-position: left;
+}
+
+@keyframes load {
+  0% {
+    left: -25%;
   }
-  .bar {
-    width: 100%;
-    height: 8px;
-    background: linear-gradient(
-      to right,
-      rgb(161, 94, 255),
-      rgb(217, 190, 255),
-      rgb(161, 94, 255)
-    );
-    background-size: 200% 100%;
-    border-radius: 10px;
-    animation: bar ease-in-out 3s infinite alternate-reverse;
+  100% {
+    left: 70%;
   }
-  @keyframes bar {
-    0% {
-      background-position: left;
-    }
-    100% {
-      background-position: right;
-    }
+  0% {
+    left: -25%;
   }
-  .bar2 {
-    width: 50%;
-  }
-  .svgIcon {
-    position: absolute;
-    left: -25px;
-    margin-top: 18px;
-    z-index: 2;
-    width: 70%;
-    animation: search ease-in-out 3s infinite alternate-reverse;
-  }
-  @keyframes search {
-    0% {
-      transform: translateX(0%) rotate(70deg);
-    }
-  
-    100% {
-      transform: translateX(100px) rotate(10deg);
-    }
-  }
-  .svgIcon circle,
-  line {
-    stroke: rgb(162, 55, 255);
-  }
-  .svgIcon circle {
-    fill: rgba(98, 65, 142, 0.238);
-  }
-  
+}
