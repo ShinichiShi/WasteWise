@@ -31,12 +31,17 @@
     object-fit: cover;
 }
 
+.main {
+    background-color: var(--light-green);
+}
+
 .navbar {
-    background-color: var(--black);
-    color: var(--light-green);
+    background-color: transparent;
+    color: var(--white);
     height: 10vh;
     width: 100%;
     padding: 2vh;
+    font-weight: 500;
     /* opacity: 0.3; */
     position: sticky;
     top: 0;
@@ -94,7 +99,79 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+.vertical-navbar {
+    position: fixed;
+    padding-top: 2vh;
+    width: 9vh;
+    height: 100%;
+    top:0;
+    background-color: var(--black);
+    transition: width 0.3s;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    border-radius: 0 3vh;
+}
+.vertical-navbar .logo2{
+    margin-left: 1vh;
+    color: var(--light-green);
+    font-size:larger;
+    font-family: 'Berkshire Swash', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+.vertical-navbar:hover {
+    width: 200px;
+}
+.vertical-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-navbar .top-menu {
+    flex-grow: 1;
+}
+
+.vertical-navbar li {
+    width: 100%;
+}
+
+.vertical-navbar a {
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+    /* height: 50px; */
+    transition: background 0.3s;
+}
+
+.vertical-navbar .icon {
+    /* min-width: 60px; */
+    text-align: center;
+    font-size: 24px;
+}
+
+.vertical-navbar .text {
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vertical-navbar:hover .text {
+    display: inline-block;
+    margin-left: 10px;  
 }
 
 input {
@@ -104,26 +181,27 @@ input {
     background-color: transparent;
     border: none;
     border-radius: 1.5vh;
-    color:var(--black);
+    color: var(--black);
 
     border-bottom: 0.2vh solid var(--light-green);
 }
 
 input:hover {
     background-color: var(--white);
-    color:var(--black);
+    color: var(--black);
     font-size: large;
 }
 
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3vh;
     text-align: center;
-    color:var(--white);
+    color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 button {
     background-color: var(--light-green);
     height: 6vh;
@@ -147,7 +225,7 @@ button:hover {
 .hero {
     height: 100vh;
     width: 100%;
-    background-color: var(--light-green);
+    /* background-color: var(--light-green); */
     position: relative;
     display: flex;
     flex-direction: row;
@@ -187,7 +265,7 @@ button:hover {
     overflow: scroll;
     position: relative;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-    
+
 }
 
 .pre-load {
@@ -282,7 +360,7 @@ button:hover {
 .details {
     height: 75vh;
     width: 50vw;
-    background-color:var(--light-green);
+    background-color: var(--light-green);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -298,26 +376,30 @@ button:hover {
     border-radius: 5vh;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
-.details button{
+
+.details button {
     height: 6vh;
     width: 20vh;
     padding: 1vh;
     background-color: var(--green);
-    display: flex;  
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 1vh;
 }
-.ngoImg{
+
+.ngoImg {
     height: 30vh;
     width: 100%;
 }
-.details img{
+
+.details img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.content{
+
+.content {
     height: 40vh;
     width: auto;
     padding: 1vh;
@@ -329,12 +411,13 @@ button:hover {
     box-sizing: border-box;
 }
 
-#name{
+#name {
     font-size: 4vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
-.btns{
+
+.btns {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -353,7 +436,7 @@ button:hover {
     text-align: center;
     font-size: 16px;
     box-sizing: border-box;
-    color:var(--light-green)
+    color: var(--light-green)
 }
 
 .fields .types {
@@ -385,7 +468,7 @@ button:hover {
     padding: 10px;
     border-radius: 3vh;
     cursor: pointer;
-    border-bottom:1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .fields .typeService li:hover {
@@ -443,60 +526,66 @@ footer .contact {
 
 
 .loader {
-  width: 350px;
-  height: 180px;
-  border-radius: 10px;
-  background: var(--light-green);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 30px;
-  /* box-shadow: 2px 2px 10px -5px lightgrey; */
+    width: 350px;
+    height: 180px;
+    border-radius: 10px;
+    background: var(--light-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
+    /* box-shadow: 2px 2px 10px -5px lightgrey; */
 }
+
 .load {
-  width: 100%;
-  height: 10px;
-  background: var(--light-green);
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
+    width: 100%;
+    height: 10px;
+    background: var(--light-green);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
 }
+
 .load::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 10px;
-  background: #002;
-  border-radius: 10px;
-  z-index: 1;
-  animation: load 0.6s alternate infinite;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 10px;
+    background: #002;
+    border-radius: 10px;
+    z-index: 1;
+    animation: load 0.6s alternate infinite;
 }
+
 label {
-  color: #002;
-  font-size: 18px;
-  animation: bit 0.6s alternate infinite;
+    color: #002;
+    font-size: 18px;
+    animation: bit 0.6s alternate infinite;
 }
 
 @keyframes bit {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes load {
-  0% {
-    left: -25%;
-  }
-  100% {
-    left: 70%;
-  }
-  0% {
-    left: -25%;
-  }
+    0% {
+        left: -25%;
+    }
+
+    100% {
+        left: 70%;
+    }
+
+    0% {
+        left: -25%;
+    }
 }
