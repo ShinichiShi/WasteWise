@@ -40,7 +40,11 @@ document.querySelector('.filter').addEventListener('click', () => {
 const details = document.querySelector('.details')
 const hero = document.querySelector('.hero')
 const resultSection = document.querySelector('.resultSection')
+const loader = document.querySelector('.loading')
+const preload=document.querySelector('.pre-load')
+
 let detailsVisible = false
+let heroFlag=true
 
 function findServices() {
   console.log(wasteType)
@@ -55,14 +59,25 @@ function findServices() {
     const banner = document.createElement('div')
     banner.className = "resultBanner"
     banner.innerHTML = `
-<div>Top Results Nearest To Your Area!!</div>`
+    <div>Top Results Nearest To Your Area!!</div>`
+    if(heroFlag){
+      resultSection.prepend(banner)
+      heroFlag=false
+    }
 
-    resultSection.prepend(banner)
-
+    //pre-adjustment
     result.style.height = "70vh"
     result.style.width = "40vw"
+    preload.style.height="70vh"
+    preload.style.width="40vw"
+    
+    preload.style.display="block"
+    result.style.display="none"
+    loader.style.display="block"
     result.innerHTML = ''
+
     navigator.geolocation.getCurrentPosition(position => {
+
       const userLat = position.coords.latitude;
       const userLng = position.coords.longitude;
 
@@ -75,7 +90,6 @@ function findServices() {
       });
 
 
-      // result.appendChild(banner)
       nearbyOrganizations.forEach(org => {
         const distance = calculateDistance(userLat, userLng, org.lat, org.lng);
 
@@ -125,31 +139,17 @@ function findServices() {
           }
         });
 
-
-        // div.addEventListener('click', () => {
-        //   showDetails();
-        //   document.addEventListener('click', outsideClickListener);
-        // });
-
-        // function outsideClickListener(event) {
-        //   if (!details.contains(event.target) && event.target !== div) {
-        //     details.style.display = "none";
-        //     hero.style.opacity = "1"
-        //   }
-        // }
-
-        // enquire.addEventListener('click', (event) => {
-        //   event.stopPropagation();
-        //   showDetails();
-        // });
-
-
         div.appendChild(dist);
         div.appendChild(enquire);
+        div.classList.add('show', 'fade-in');
         result.appendChild(div);
-
       });
 
+    preload.style.display="none"
+    result.style.display="block"
+    loader.style.display="none"
+
+      
     }, () => {
       alert("Kindly Enable Geolocation and try again");
     });
