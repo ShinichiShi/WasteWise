@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./assets/icon.svg" type="image/x-icon">
+
 </head>
 
 <body>
     <nav class="navbar">
-        <div>
-            WasteWise:
+        <div class="logo">
+            <img src="./assets/logo.svg" alt="logo">
+            <p>|</p> WasteWise
         </div>
         <div class="links">
             <ul>
-                <li><a href="#" class="href">Link 1</a></li>
-                <li><a href="#" class="href">Link 2</a></li>
-                <li> <a href="#" class="href">Link 3</a>
+                <li><a href="#" class="href">HOME</a></li>
+                <li><a href="#" class="href">BLOG</a></li>
+
+                <li> <a href="#" class="href">CONTACT US</a>
                 </li>
-                <li> <a href="#" class="href">Link 4</a>
-                </li>
-                <li> <a href="#" class="href">Link 5</a>
-                </li>
-                </li>
+                <button class="signbtn">Sign Up!</button>
             </ul>
         </div>
     </nav>
@@ -36,11 +36,10 @@
             <div class="choice">
                 <button class="wasteTypeFood">FOOD</button>
                 <button class="wasteTypeElectronic">ELECTRONIC</button>
-                <button class="wasteTypeScrap">SCRAP DEALERS</button>
+                <button class="wasteTypeScrap">SCRAP</button>
             </div>
             <div class="time">
                 <input type="text" name="time" id="time" placeholder="When do you want the service?">
-                <!-- <option value="immediate">immediate</option> -->
             </div>
             <div class="type">
                 <input type="text" name="type" id="type" placeholder="What type of waste do you want to dispose?">
@@ -57,13 +56,49 @@
             </div>
         </div>
         <div class="resultSection">
-            <div class="results">
-        </div>
+            <div class="pre-load">
+                <div class="resultBanner" style="display: none">
+                    <div>Top Results Nearest To Your Area!!</div>
+                </div>
+                <div class="loading" style="display: none;">
+                    <div class="loader" >
+                        <div class="loaderMiniContainer">
+                            <div class="barContainer">
+                                <span class="bar"></span>
+                                <span class="bar bar2"></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 101 114" class="svgIcon">
+                                <circle stroke-width="7" stroke="black" transform="rotate(36.0692 46.1726 46.1727)"
+                                    r="29.5497" cy="46.1727" cx="46.1726"></circle>
+                                <line stroke-width="7" stroke="black" y2="111.784" x2="97.7088" y1="67.7837"
+                                    x1="61.7089"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results"></div>
         </div>
     </div>
     <div class="details">
         wq
     </div>
+    <div class="quikrSelect inputs " tabindex="-1">
+        <input type="text" class="semInput" name="query" autocomplete="off" value="">
+        <span tabindex="-1" class="types">When do you need the Service?</span>
+        <span tabindex="-1" class="values"></span>
+        <ul class="typeService">
+            <li class="" data-value="IMMEDIATELY"><span data-value="IMMEDIATELY">Immediately</span></li>
+            <li class="" data-value="NEXT_3_DAYS"><span data-value="NEXT_3_DAYS">In the next 3 days</span></li>
+            <li class="" data-value="NEXT_7_DAYS"><span data-value="NEXT_7_DAYS">In the next 7 days</span></li>
+            <li class="" data-value="NEXT_15_DAYS"><span data-value="NEXT_15_DAYS">In the next 15 days</span></li>
+            <li class="" data-value="NEXT_30_DAYS"><span data-value="NEXT_30_DAYS">Within a month</span></li>
+            <li class="" data-value="AFTER_A_MONTH"><span data-value="AFTER_A_MONTH">After a month</span></li>
+        </ul>
+        <i tabindex="-1" class="glyphicon glyphicon-menu-down"></i>
+    </div>  
+
     <footer>
         <div class="contact">
             <span> Questions? Call
