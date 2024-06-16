@@ -273,8 +273,9 @@ button:hover {
     margin: 0;
     background-color: antiquewhite;
     position: absolute;
-    top: 10vh;
-    right: 0.5vw;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     opacity: 1;
     display: none;
     border-radius: 5vh;
