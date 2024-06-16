@@ -1,22 +1,3 @@
-const organizations = [
-  { name: "NO HUNGRY CHILD", type: "food", lat: 12.915548283849164, lng: 77.57809671209733 },
-  { name: "Vara Foundations", type: "food", lat: 12.896483661947967, lng: 77.58218979281666 },
-  { name: "Needy Child India Foundation", type: "food", lat: 12.907480369996758, lng: 77.55393648898828 },
-  { name: "E-Waste Collection Centr", type: "electronic", lat: 12.914786, lng: 77.586341 },
-  { name: "Zolopik", type: "electronic", lat: 12.91549462209462, lng: 77.58726900581297 },
-  { name: "Sorian Recyclers Pvt Ltd", type: "electronic", lat: 12.902102474967156, lng: 77.5478495394965 },
-  { name: "E-FRIENDLY WASTE RECYCLERS", type: "electronic", lat: 12.946012043510384, lng: 77.52508988125737 },
-  { name: "Surabhi Foundation Trust", type: "food", lat: 12.883681974096652, lng: 77.54176516453245 },
-  { name: "Child Support Foundation", type: "food", lat: 12.906246236561199, lng: 77.5745299783822 },
-  { name: "The Akshayapatra Foundation VK Hill", type: "food", lat: 12.888301102050209, lng: 77.54819105987795 },
-  { name: "Little More Love", type: "food", lat: 12.898242366043899, lng: 77.5952112639547 },
-  { name: "Vidyaranya", type: "food", lat: 12.983618014894436, lng: 77.6008263071386 },
-  { name: "S&S Scrap Dealers & Scrap Buyers", type: "scrap", lat: 12.967927625582236, lng: 77.53995781801031 },
-  { name: "HN Scrap Buyer", type: "scrap", lat: 12.904940, lng: 77.635685 },
-  { name: "Scraplan - Best Scrap Buyers", type: "scrap", lat: 12.897489258475378, lng: 77.55926839919253 },
-  { name: "AIM TRADING COMPANY", type: "scrap", lat: 12.906688201660838, lng: 77.57129994491343 },
-  { name: "Scrapzone-Your Pickup Service", type: "scrap", lat: 12.91866794871167, lng: 77.5900663943839 }
-];
 
 // ###############################################################################################
 let wasteType;
@@ -118,9 +99,30 @@ function findServices() {
         // Function to show dialog details
         const showDetails = () => {
           details.innerHTML = `
-           <p>Contact: ${org.contact}</p>
-           <p>Address: ${org.address}</p>
-           <p>Distance: ${distance.toFixed(2)} km</p>
+          <div class="ngoImg">
+            <img src="${org.img}" alt="image" class="img">
+        </div>
+        <div class="content">
+             <div id="name">
+               ${org.name}
+             </div>
+             <div id="subHeading">
+                ${org.desc}
+             </div>
+             <div class="btns">
+                <a href="${org.website}"><button>
+                    <img src="./assets/browse.svg" alt="browse">
+                    WEBSITE</button>
+                </a>
+                <a href="${org.direction}">
+             <button>
+                <img src="./assets/explore.svg" alt="browse">
+                DIRECTIONS</button>
+                </a>  
+             </div> 
+            <div id="Address"><b>Address:</b><div>${org.address}</div></div>
+            <div id="phone"><b>Contact: </b>${org.ph}</div>
+        </div>
            `;
           hero.style.opacity = "0.7"
           details.style.display = "block";
