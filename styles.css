@@ -17,6 +17,7 @@
     font-family: "Assistant", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    scroll-behavior: smooth;
 }
 
 #myVideo {
@@ -34,7 +35,7 @@
 .main {
     background-color: var(--light-green);
 }
-
+/* ########################################################################### */
 .navbar {
     background-color: transparent;
     color: var(--white);
@@ -45,13 +46,14 @@
     /* opacity: 0.3; */
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index:10;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
     font-size: 4vh;
+
 }
 
 ul {
@@ -100,6 +102,7 @@ a {
     align-items: center;
     justify-content: center;
 }
+/* ########################################################################### */
 
 .vertical-navbar {
     position: fixed;
@@ -153,7 +156,7 @@ a {
     align-items: center;
     /* padding: 10px; */
     /* height: 50px; */
-    transition: background 0.3s;
+    /* transition: background 0.3s; */
 }
 
 .vertical-navbar .icon {
@@ -173,7 +176,7 @@ a {
     display: inline-block;
     margin-left: 10px;  
 }
-
+/* ########################################################################### */
 input {
     position: relative;
     height: 5.5vh;
