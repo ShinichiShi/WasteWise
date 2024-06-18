@@ -110,11 +110,11 @@ function findServices() {
                 ${org.desc}
              </div>
              <div class="btns">
-                <a href="${org.website}"><button>
+                <a href="${org.website}" target="_blank"><button>
                     <img src="./assets/browse.svg" alt="browse">
                     WEBSITE</button>
                 </a>
-                <a href="${org.direction}">
+                <a href="${org.direction}" target="_blank">
              <button>
                 <img src="./assets/explore.svg" alt="browse">
                 DIRECTIONS</button>
