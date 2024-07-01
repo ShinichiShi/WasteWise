@@ -1,0 +1,21 @@
+.heading{
+    background-image: url("https://providerdigital.com.au/wp-content/uploads/2024/05/e-waste-ai-impact-1200x900.jpg");
+}
+.e{
+    height: 50vh;
+}
+.i{
+    height: 50vh;
+}
+.i .pic>img{
+    position: relative;
+    top: 3vh;
+}
+.s .pic>img{
+    height: 50vh;
+    position: relative;
+}
+.s .pic{
+    position: relative;
+    bottom: 6vh;
+}

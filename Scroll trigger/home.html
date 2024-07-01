@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment</title>
+  <link rel="shortcut icon" href="./Forms/assets/icon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="./homestyle.css">
+  <link rel="stylesheet" href="./Forms/forms.css">
+
+  <link rel="canonical" href="https://codepen.io/GreenSock/pen/YzbPYMx">
+  <link rel='stylesheet' href='https://codepen.io/GreenSock/pen/xxmzBrw.css'>
+  <style>
+    .wrapper,
+    .content {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .contents {
+      overflow-x: hidden;
+    }
+
+    .contents .section {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      perspective: 500px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="contents">
+      <header>
+        <main class="main">
+          <div class="Section_top">
+            <div class="content">
+              <div class="heading">
+                <div class="title">Think Twice...</div>
+                <div class="subtitle">WASTE WISE...</div>
+                <!-- <h1 class="title"> better tomorrow</h1> -->
+              </div>
+            </div>
+          </div>
+        </main>
+      </header>
+      <div class="image-container">
+        <img
+          src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp"
+          alt="image">
+      </div>
+    </div>
+    <div class="vertical-navbar">
+      <a href="index.html">
+        <div class="logo2">
+          <img src="./Forms/assets/logo.svg" alt="logo">
+          <p>|</p>WasteWise
+        </div>
+      </a>
+      <div class="links">
+        <ul class="top-menu">
+          <li>
+            <a href="./index.html">
+              <span class="icon"><img src="./Forms/assets/home.svg" alt="home"></span>
+              <span class="text">HOME</span>
+            </a>
+          </li>
+          <li>
+            <a href="./Forms/forms1.html">
+              <span class="icon"><img src="./Forms/assets/dispose.svg" alt="dispose"></span>
+              <span class="text">Dispose Waste</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><img src="./Forms/assets/scrap.svg" alt="docs"></span>
+              <span class="text">Scrap Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vikas-infopgs/food.html">
+              <span class="icon"><img src="./Forms/assets/food.svg" alt="contact"></span>
+              <span class="text">Food Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><img src="./Forms/assets/electronic.svg" alt="contact"></span>
+              <span class="text">E-Waste Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="../signinpg.html">
+              <span class="icon"><img src="./Forms/assets/volunteer.svg" alt="volunteer"></span>
+              <span class="text">JOIN US</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <script src='https://unpkg.com/gsap@3/dist/gsap.min.js'></script>
+  <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+  <script id="rendered-js">
+    console.clear();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    window.addEventListener("load", () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".wrapper",
+            start: "top top",
+            end: "+200%",
+            pin: true,
+            scrub: true,
+            // markers: true
+          }
+        })
+        .to(".contents img", {
+          scale: 2,
+          z: 350,
+          transformOrigin: "center center",
+          ease: "power1.inOut"
+        });
+
+      // gsap.set(".vertical-navbar", { autoAlpha: 0 }); // Initially hide the navbar
+      // ScrollTrigger.create({
+      //   trigger: ".wrapper",
+      //   start: "top top",
+      //   end: "+=200%",
+      //   onLeave: () => gsap.to(".vertical-navbar", { autoAlpha: 1, duration:1}), // Show navbar on scrolling past 100%
+      //   onEnterBack: () => gsap.to(".vertical-navbar", { autoAlpha: 0, duration:1 }) // Hide navbar on scrolling back up
+      // });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+
+:root {
+    --black: #182628;
+    --light-green: #65CCB8;
+    --green: #57BA98;
+    --dark-green: #3B945E;
+    --white: #F2F2F2;
+
+}
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: "Assistant", sans-serif;    
+}
+.banner>img{
+    width: 5vw;
+    height: 14vh;
+    background-color: transparent;
+    position: relative;
+    left: 5vw;
+    bottom: 10vh;
+}
+.banner>h1{
+    position: relative;
+    font-family: 'Berkshire Swash', sans-serif;
+    left: 11vw;
+    transition: transform 1.5s ease;
+    color: #65CCB8;
+}
+.tagline>h2{
+    position: relative;
+    left: 2.3vw;
+    bottom: 7vh;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: #65CCB8;
+} 
+.left{
+    height: 100vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+}
+.banner{
+    background-color: black;
+    height: 6vh;
+    width: 30vw;
+    position: relative;
+    top:8.5vh;
+}
+.contents{
+    display: flex;
+}
+.right{
+    height: 100vh;
+    background-color: #65CCB8;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.right h1{
+    position: relative;
+    bottom: 8vh;
+    left: 1vw;
+    padding: 5px;
+    font-family: 'Berkshire Swash', sans-serif;
+    font-size: 7vh;
+    font-style: italic;
+}
+.right>span{
+  position: relative;
+  bottom: 6vh;
+  left: 1.5vw;
+  font-size: 23px;
+  color: black;
+  font-family: 'Berkshire Swash', sans-serif;
+}
+.inside>span{
+    color: #65CCB8;
+    position: relative;
+    top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+.inside{
+    background-color:#182628;
+    color: #65CCB8;
+    border-radius: 30px;
+}
+.inside:hover{
+    box-shadow: 5px 5px 15px 5px #046f80;
+}
+.input{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    width: 69.5vw;
+    height: 45vh;
+    position: relative;
+    bottom: 3vh;
+}
+.fc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    position: relative;
+    top: 5vh;
+    left: 2vw;
+}
+#name{
+    position: relative;
+    left:1vw;
+}
+#pass{
+    position: relative;
+    left:1.6vw;
+    width: 21vw;
+}
+.sc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    position: relative;
+    top: 5vh;
+    left: 4vw;
+}
+#email{
+    position: relative;
+    left: 4vw;
+}
+#sname{
+    position: relative;
+    left: 1.7vw;
+}
+input{
+    background-color: transparent;
+    color: #69e2b8;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 8px;
+    border-bottom: 2px solid #65CCB8;
+}
+input:hover{
+ transform: scale(1.04);
+ box-shadow: 1px 1px 15px 1px #65CCB8;
+}
+.button{
+    position: relative;
+    top: 2.5vh;
+}
+button{
+    background-color: #182628;
+    color: #65CCB8;
+    width: 13vw;
+    height: 6vh;
+    border-radius: 10px;
+    font-weight: bold;
+}
+button:hover{
+    background-color: #F2F2F2;
+    color: #182628 ;
+    box-shadow: 5px 5px 15px 5px rgb(0, 0, 0);
+}
+.login>span{
+    position: relative;
+    top: 5.5vh;
+    font-weight: bold;
+    font-size: 20px;
+}
+/* .login span a{
+    text-decoration: none;
+    border-radius: 8px;
+}
+.login span a:hover{
+  /* background-color: #182628; */
+  /* color: #69e2b8; */
+  
+
+  .vertical-navbar {
+    position: fixed;
+    padding-top: 2vh;
+    width: 9vh;
+    height: 100%;
+    top:0;
+    background-color: var(--black);
+    transition: width 0.3s;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    border-radius: 0 3vh;
+    scrollbar-width: 0;
+}
+.vertical-navbar .logo2{
+    margin-left: 1vh;
+    color: var(--light-green);
+    font-size:larger;
+    font-family: 'Berkshire Swash', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+.vertical-navbar:hover {
+    width: 200px;
+    scrollbar-width: 0;
+}
+.vertical-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-navbar .top-menu {
+    flex-grow: 1;
+}
+
+.vertical-navbar li {
+    width: 100%;
+}
+
+.vertical-navbar a {
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+    /* height: 50px; */
+    /* transition: background 0.3s; */
+}
+
+.vertical-navbar .icon {
+    /* min-width: 60px; */
+    text-align: center;
+    font-size: 24px;
+}
+
+.vertical-navbar .text {
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vertical-navbar:hover .text {
+    display: inline-block;
+    margin-left: 10px;  
+}
+
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+
+li {
+    list-style-type: none;
+    padding: 0.5vh;
+    height: 5vh;
+    text-align: center;
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover {
+    background-color: var(--green);
+    color: var(--black);
+}

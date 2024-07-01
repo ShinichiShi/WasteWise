@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+
+.logo{
+ color:black;
+}
+.heading>span{
+    font-family: 'Berkshire Swash', sans-serif;
+    font-size: 10vh;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    text-shadow: 5px 5px 10px black;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.heading>span:hover{
+ transform: scale(1.1);
+}
+.heading{
+    background-image: url("https://foundationfar.org/wp-content/uploads/2022/05/Food-waste-RFA-banner-scaled.jpg");
+    background-position: center;
+    background-size: cover;
+    animation: fadeIn 2s;
+}
+body{
+    background-color: black;
+}
+.heading{
+    width:94.5vw;
+    height: 80vh;
+    color: white;
+    /* text-align: center; */
+    margin: 4vh;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--light-green); */
+    box-sizing: border-box;
+}
+@keyframes jadoo{
+    from{
+        opacity:0;     
+        scale:0.5;  
+    }
+    to{
+        opacity:1;
+        scale: 1;
+    }
+}
+.plugcards{
+    width: 94.5vw;
+    margin: 4vh;
+    margin-left: 5vw;
+    /* margin-right: 5vw; */
+    padding: 3vh;
+    box-sizing: border-box;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    background-color: var(--light-green);
+    border: 3px solid black;
+    border-radius: 2vw;
+}
+.plugcards{
+    animation: jadoo linear,fadeIn 2s;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%;
+}
+.plugcards:hover{
+    box-shadow: 3px 3px 15px 3px var(--light-green);
+}
+.inside{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    /* animation: fadeIn 3s; */
+}
+.pic{
+   width: 60vw;
+   box-sizing: border-box;
+}
+.info{
+    width: 100vw;
+    height: 50vh;
+}
+.info>h1{
+    text-decoration-line: underline;
+}
+.info>span{
+    font-size: 20px;
+    font-style: oblique;
+}
+.pic>img{
+    border: 2px solid black;
+    width: 30vw;
+    height: 37vh;
+    position: relative;
+    left: 2vw;
+    border-radius: 2vw;
+  
+}
+.pic>img:hover{
+    box-shadow: 5px 5px 15px 5px black;
+    transform: scale(1.04);
+}
+.even>img{
+    position: relative;
+    top: 0.3vh;
+    left: 0.5vw;
+}
+.s{
+    height: 60vh;
+}
+.ss>img{
+    position: relative;
+    top: 8vh;
+}
+.conc{
+    height: 40vh;
+}

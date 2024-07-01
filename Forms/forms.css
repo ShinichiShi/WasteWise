@@ -44,7 +44,8 @@
     padding: 2vh;
     font-weight: 500;
     /* opacity: 0.3; */
-    position: sticky;
+    /* position: sticky; */
+    position: relative;
     top: 0;
     z-index:10;
     display: flex;
@@ -218,6 +219,8 @@ button {
 button:hover {
     background-color: var(--white);
     cursor: pointer;
+    transform: scale(1.05);
+
 }
 
 .enquire:hover {
@@ -496,12 +499,19 @@ footer {
 }
 
 .footer {
+    /* height: 15vh; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     color: white;
     position: relative;
 }
+#contactLink{
+    width: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
 footer span {
     padding: 34px 24px;
     margin-left: 50px;
@@ -523,6 +533,8 @@ footer span {
 }
 
 footer .contact {
+    display: flex;
+    justify-content: space-between;
     padding: 34px 24px;
     position: relative;
 }

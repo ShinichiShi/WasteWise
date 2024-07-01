@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms: Dispose Waste</title>
+    <link rel="stylesheet" href="./forms.css">
+    <link rel="shortcut icon" href="../assets/icon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../assets/logo.svg" alt="logo">
+                <p>|</p> WasteWise
+            </div>
+            <div class="links">
+                <a href="../assets/volunteer.svg"><button class="signbtn">JOIN US!</button></a>
+            </div>
+        </nav>
+        <div class="vertical-navbar">
+            <a href="../index.html">
+                <div class="logo2">
+                  <img src="../assets/logo.svg" alt="logo">
+                  <p>|</p>WasteWise
+                </div>
+              </a>
+            <div class="links">
+                <ul class="top-menu">
+                    <li>
+                        <a href="../index.html">
+                            <span class="icon"><img src="../assets/home.svg" alt="home"></span>
+                            <span class="text">HOME</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./forms.html">
+                            <span class="icon"><img src="../assets/dispose.svg" alt="volunteer"></span>
+                            <span class="text">Dispose Waste</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Info/scrap.html">
+                            <span class="icon"><img src="../assets/scrap.svg" alt="docs"></span>
+                            <span class="text">Scrap Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Info/food.html">
+                            <span class="icon"><img src="../assets/food.svg" alt="contact"></span>
+                            <span class="text">Food Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Info/ewaste.html">
+                            <span class="icon"><img src="../assets/electronic.svg" alt="contact"></span>
+                            <span class="text">E-Waste Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../volunteer/signinpg.html">
+                            <span class="icon"><img src="../assets/volunteer.svg" alt="volunteer"></span>
+                            <span class="text">JOIN US</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hero">
+            <video src="../assets/bg.mp4" video autoplay muted loop id="myVideo"></video>
+            <div class="card">
+                <div class="header">
+                    Connect with professional Waste Collection - Garbage Disposal service providers
+                </div>
+                <div class="choice">
+                    <button class="wasteTypeFood">FOOD</button>
+                    <button class="wasteTypeElectronic">ELECTRONIC</button>
+                    <button class="wasteTypeScrap">SCRAP</button>
+                </div>
+
+                <div class="fields inputs" tabindex="-1">
+                    <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                    <span tabindex="-1" class="types">When do you need the Service?</span>
+                    <span tabindex="-1" class="values"></span>
+                    <ul class="typeService">
+                        <li data-value="IMMEDIATELY">
+                            <span data-value="IMMEDIATELY">Immediately</span>
+                        </li>
+                        <li data-value="NEXT_3_DAYS">
+                            <span data-value="NEXT_3_DAYS">In the next 3 days</span>
+                        </li>
+                        <li data-value="NEXT_7_DAYS">
+                            <span data-value="NEXT_7_DAYS">In the next 7 days</span>
+                        </li>
+                        <!-- <li data-value="NEXT_15_DAYS">
+                            <span data-value="NEXT_15_DAYS">In the next 15 days</span>
+                        </li>
+                        <li data-value="NEXT_30_DAYS">
+                            <span data-value="NEXT_30_DAYS">Within a month</span>
+                        </li> -->
+                        <!-- <li data-value="AFTER_A_MONTH">
+                            <span data-value="AFTER_A_MONTH">After a month</span>
+                        </li> -->
+                    </ul>
+                    <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
+                </div>
+
+                <!-- <div class="fields inputs" tabindex="-1">
+                    <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                    <span tabindex="-1" class="types">What type of waste do you need help disposing?
+                    </span>
+                    <span tabindex="-1" class="values"></span>
+                    <ul class="typeService">
+                        <li data-value="Dry-waste">
+                            <span data-value="Dry-waste">Dry Waste</span>
+                        </li>
+                        <li data-value="WetWaste">
+                            <span data-value="WetWaste">Wet Waste</span>
+                        </li>
+                        <li data-value="ElectronicWaste">
+                            <span data-value="ElectronicWaste">Electronic Waste
+                            </span>
+                        </li> -->
+                        <!-- <li data-value="PaperWaste">
+                            <span data-value="PaperWaste">Paper Waste
+                            </span>
+                        </li>
+                        <li data-value="Plastics">
+                            <span data-value="Plastics">Plastics</span>
+                        </li>
+                        <li data-value="ConstructionWaste">
+                            <span data-value="ConstructionWaste">Construction Waste
+                            </span>
+                        </li>
+                        <li data-value=" MedicalWaste">
+                            <span data-value=" MedicalWaste"> Medical Waste
+                            </span>
+                        </li>
+                        <li data-value="HazardousWaste">
+                            <span data-value="HazardousWaste"> Hazardous Waste
+                            </span>
+                        </li> -->
+                    <!-- </ul>
+                    <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
+                </div> -->
+
+                <div class="fields inputs" tabindex="-1">
+                    <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                    <span tabindex="-1" class="types">What type of place do you need this service at?
+                    </span>
+                    <span tabindex="-1" class="values"></span>
+                    <ul class="typeService">
+                        <li data-value="Residential">
+                            <span data-value="Residential">Residential</span>
+                        </li>
+                        <li data-value="Commercial">
+                            <span data-value="Commercial">Commercial</span>
+                        </li>
+                        <li data-value="Industrial">
+                            <span data-value="Industrial">Industrial</span>
+                        </li>
+                    </ul>
+                    <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
+                </div>
+
+                <div class="fields inputs" tabindex="-1">
+                    <input type="text" class="semInput" name="query" autocomplete="off" value="">
+                    <span tabindex="-1" class="types">What is the frequency of service you need?
+                    </span>
+                    <span tabindex="-1" class="values"></span>
+                    <ul class="typeService">
+                        <li data-value="Daily">
+                            <span data-value="Daily">Daily</span>
+                        </li>
+                        <li data-value="Weekly">
+                            <span data-value="Weekly">Weekly</span>
+                        </li>
+                        <li data-value="Monthly">
+                            <span data-value="Monthly">Monthly</span>
+                        </li>
+                        <li data-value="Yearly">
+                            <span data-value="Yearly">Yearly</span>
+                        </li>
+                    </ul>
+                    <i tabindex="-1" class="glyphicon glyphicon-menu-down">&#9662;</i>
+                </div>
+                <div class="terms">By clicking Enquire Now, you agree to the <span style="color: #F2F2F2;">WasteWise
+                        Terms of Use</span></div>
+
+                <div class="filter">
+                    <button>Enquire Now</button>
+                </div>
+            </div>
+            <div class="resultSection">
+                <div class="pre-load">
+                    <div class="resultBanner" style="display: none">
+                        <div>Top Results Nearest To Your Area!!</div>
+                    </div>
+                    <div class="loading" style="display: none;">
+                        <div class="loader">
+                            <label>Please wait...</label>
+                            <div class="load"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="details">
+        </div>
+
+    </div>
+    <footer>
+        <div class="contact footer">
+            <span> Questions? Call
+                <a href="#">+91 80461 10007
+                </a>
+            </span>
+            <div id="contactLink">
+                <a href=""><img src="../assets/insta.svg" alt="insta"></a>
+                <a href=""><img src="../assets/twitter.svg" alt="twiiter"></a>
+                <a href=""><img src="../assets/facebook.svg" alt="facebook"></a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-item">
+                <a href="faq">Investor Relations</a>
+                <a href="faq">Jobs</a>
+                <a href="faq">Legal Notices</a>
+                <!-- <a href="faq">Terms of Use</a> -->
+            </div>
+
+            <div class="footer-item">
+                <!-- <a href="faq">Help Centre</a>
+                <a href="faq">Account</a>
+                <a href="faq">Terms of Use</a> -->
+                <!-- <a href="faq">Legal Notices</a> -->
+            </div>
+            <div class="footer-item">
+                <!-- <a href="faq">Media Centre</a>
+                <a href="faq">Privacy</a>
+                <a href="faq">Cookie Preferences</a>
+                <a href="faq">Corporate</a> -->
+            </div>
+
+            <div class="footer-item">
+                <a href="faq">Help Centre</a>
+                <a href="faq">Account</a>
+                <a href="faq">Terms of Use</a>
+                <!-- <a href="faq">Only on Netflix</a> -->
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./orgdb.js"></script>
+<script src="./script.js"></script>
+
+</html>

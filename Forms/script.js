@@ -160,7 +160,7 @@ function findServices() {
       result.style.display = "block"
       loader.style.display = "none"
 
-
+ 
     }, () => {
       alert("Kindly Enable Geolocation and try again");
     });

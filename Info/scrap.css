@@ -1,0 +1,18 @@
+.heading{
+    background-image: url("https://www.treehugger.com/thmb/7qIUuG80pqCdXFHsFtq7lxlVVkM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/evan-demicoli-HGCqL-tRcac-unsplash-29c3c9489cf5455da53936684f280459.jpg");
+}
+.s .info>span{
+    font-size: 3.3vh;
+}
+.d{
+    height: 65vh;
+}
+.d .ss{
+    position: relative;
+    bottom: 5vh;
+    left: 2.5vw;
+}
+.d .ss>img{
+    height: 50vh;
+    width: 30vw;
+}
